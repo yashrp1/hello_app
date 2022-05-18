@@ -8,14 +8,21 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        height: 60,
-        width: 200,
-        padding: const EdgeInsets.fromLTRB(45, 15, 45, 5),
-        child: Text(label),
-      ),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
+      child: TextButton(
+                    onPressed: onTap,
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(const Color(0xff465bd8))),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        label,
+                        style: const TextStyle(color: Colors.white, fontSize: 12.0),
+                      ),
+                    ),
+                  ),
     );
   }
 }

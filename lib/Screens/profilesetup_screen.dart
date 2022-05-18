@@ -21,38 +21,38 @@ class ProfileSetupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 61, 58, 61),
-      body: SafeArea(
-        
-          child: Container(
-            color: const Color.fromARGB(255, 61, 58, 61),
-            child: CustomScrollView(
-              slivers: [
-                SliverToBoxAdapter(
-                  child: 
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(0, 40, 0, 10),
-                    child: CircleImage(image: 'https://us.123rf.com/450wm/apoev/apoev2107/apoev210700049/171659475-stock-vector-default-avatar-photo-placeholder-gray-profile-picture-icon-man-in-t-shirt.jpg?ver=6'))
-                  ),
-                SliverToBoxAdapter(
-                  child: CustomTextField(textEditingController: profileSetupcontroller.namecontroller),
-                ),
-                SliverToBoxAdapter(
-                  child: CustomButton(
-                    label: 'CONTINUE', 
-                    onTap: () async {
-                       await profileSetupcontroller.createUserprofile
-                       (profileSetupcontroller.namecontroller.text, profileSetupcontroller.profilePicture );
-                        loginController.setloginpreference(userController.uid.value);
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> HelloAppScreen()));
-                       },
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: const Color.fromARGB(255, 61, 58, 61),
+        body: Container(
+              color: const Color.fromARGB(255, 61, 58, 61),
+              child: CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: 
+                    Container(
+                      padding: const EdgeInsets.fromLTRB(0, 40, 0, 10),
+                      child: const CircleImage(image: 'https://us.123rf.com/450wm/apoev/apoev2107/apoev210700049/171659475-stock-vector-default-avatar-photo-placeholder-gray-profile-picture-icon-man-in-t-shirt.jpg?ver=6'))
                     ),
-                )
-              ],
+                  SliverToBoxAdapter(
+                    child: CustomTextField(textEditingController: profileSetupcontroller.namecontroller),
+                  ),
+                  SliverToBoxAdapter(
+                    child: CustomButton(
+                      label: 'CONTINUE', 
+                      onTap: () async {
+                         await profileSetupcontroller.createUserprofile
+                         (profileSetupcontroller.namecontroller.text, profileSetupcontroller.profilePicture );
+                          loginController.setloginpreference(userController.uid.value);
+                          // ignore: use_build_context_synchronously
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> HelloAppScreen()));
+                         },
+                      ),
+                  )
+                ],
+              ),
             ),
-          )
-        ),
+      ),
     );
   }
 }

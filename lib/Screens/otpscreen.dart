@@ -70,10 +70,12 @@ class OtpScreen extends StatelessWidget {
                                 filled: true,
                                 fillColor: Colors.white,  
                               ),
-                              keyboardType: TextInputType.phone,
+                              keyboardType: TextInputType.number,
                               maxLength: 1,
                               onFieldSubmitted: (String value) {
-                              FocusScope.of(context).requestFocus(otpController.otpdigit3focus);
+                              if (value.length == 1) {
+            FocusScope.of(context).nextFocus();
+          }
                                },
                               ),
                             ),

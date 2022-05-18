@@ -10,10 +10,10 @@ class ProfileSetupcontroller extends GetxController{
 
 
   late TextEditingController namecontroller;
-  var profile_picture = "https://us.123rf.com/450wm/apoev/apoev2107/apoev210700049/171659475-stock-vector-default-avatar-photo-placeholder-gray-profile-picture-icon-man-in-t-shirt.jpg?ver=6";
+  var profilePicture = "https://us.123rf.com/450wm/apoev/apoev2107/apoev210700049/171659475-stock-vector-default-avatar-photo-placeholder-gray-profile-picture-icon-man-in-t-shirt.jpg?ver=6";
 
-  Future createUserprofile(String name, String profile_picture) async {
-   return await UserDatabaseService(userController.uid.string).updateUserData(name, userController.mobileno.string, profile_picture);
+  Future createUserprofile(String name, String profilePicture) async {
+   return await UserDatabaseService(userController.uid.string).updateUserData(name, userController.mobileno.string, profilePicture);
   }
   
 
