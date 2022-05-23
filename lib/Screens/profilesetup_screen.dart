@@ -32,7 +32,8 @@ class ProfileSetupScreen extends StatelessWidget {
                     child: 
                     Container(
                       padding: const EdgeInsets.fromLTRB(0, 40, 0, 10),
-                      child: const CircleImage(image: 'https://us.123rf.com/450wm/apoev/apoev2107/apoev210700049/171659475-stock-vector-default-avatar-photo-placeholder-gray-profile-picture-icon-man-in-t-shirt.jpg?ver=6'))
+                      child: const CircleImage(image: 'https://us.123rf.com/450wm/apoev/apoev2107/apoev210700049/171659475-stock-vector-default-avatar-photo-placeholder-gray-profile-picture-icon-man-in-t-shirt.jpg?ver=6',
+                      icon: Icon(Icons.add,color: Colors.white,),))
                     ),
                   SliverToBoxAdapter(
                     child: CustomTextField(textEditingController: profileSetupcontroller.namecontroller),

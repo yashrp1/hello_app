@@ -158,6 +158,7 @@ class HelloAppScreen extends StatelessWidget {
       },
       child: Obx(()=> Scaffold(
           appBar: AppBar(
+            automaticallyImplyLeading: false,
             backgroundColor: tabController.isSearching.value ? Colors.white : Color.fromARGB(255, 69, 66, 69),
             title: tabController.isSearching.value ? SearchBar(searchBarController: _searchBarController): Text('HelloApp'),
       
